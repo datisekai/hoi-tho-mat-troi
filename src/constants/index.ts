@@ -2,6 +2,7 @@ const basePathName: string = "/";
 export const pathNames = {
   home: basePathName,
   commingSoon: basePathName + "comming-soon",
+  inosuke: basePathName + "giai-cuu-inosuke",
 };
 
 export const headerMenu = [
@@ -10,12 +11,12 @@ export const headerMenu = [
     href: "/",
   },
   {
-    title: "Đẩy Sushi",
-    href: "day-sushi",
-  },
-  {
     title: "Giải cứu Inosuke",
     href: "giai-cuu-inosuke",
+  },
+  {
+    title: "Đẩy Sushi",
+    href: "day-sushi",
   },
 ];
 
@@ -78,4 +79,27 @@ export const formNumber = [
     label: "Số 9",
     key: "quantity9",
   },
+];
+
+export const inosukes = [
+  "/ino/ino-1.jpeg",
+  "/ino/ino-2.jpeg",
+  "/ino/ino-3.jpeg",
+  "/ino/ino-4.jpeg",
+  "/ino/ino-5.jpeg",
+  "/ino/ino-6.jpeg",
+  "/ino/ino-7.jpeg",
+  "/ino/ino-8.jpeg",
+  "/ino/ino-9.jpeg",
+  "/ino/ino-10.jpeg",
+  "/ino/ino-11.jpeg",
+  "/ino/ino-12.jpeg",
+  "/ino/ino-13.jpeg",
+  "/ino/ino-14.jpeg",
+  "/ino/ino-15.jpeg",
+  "/ino/ino-16.jpeg",
+  "/ino/ino-17.jpeg",
+  "/ino/ino-18.jpeg",
+  "/ino/ino-19.jpeg",
+  "/ino/ino-20.jpeg",
 ];

@@ -18,6 +18,11 @@ export const router: any = createRouter({
       name: "commingSoon",
       component: () => importView("Error"),
     },
+    {
+      path: pathNames.inosuke,
+      name: "inosuke",
+      component: () => importView("Inosuke"),
+    },
     { path: "/:pathMatch(.*)*", redirect: pathNames.commingSoon },
   ] as RouteRecordRaw[],
 });

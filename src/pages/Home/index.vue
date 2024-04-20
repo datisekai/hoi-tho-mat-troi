@@ -209,12 +209,14 @@ const handleCalculate = async () => {
   } catch (error) {}
   loading.value = false;
   oldResult.value = arrayResult;
-  result.value =
+
+  const text =
     arrayResult?.length > 0 ? arrayResult.join(" ") : "Không tìm thấy";
+  result.value = text;
 
   ElNotification({
     title: "Thông báo",
-    message: "Đã tìm xong",
+    message: text,
   });
 
   if (arrayResult.length > 0) {

@@ -72,6 +72,7 @@
 import { reactive, ref } from "vue";
 import { formCalculate, formNumber } from "../../constants";
 import { getCalculator } from "../../utils";
+import { ElNotification } from "element-plus";
 
 interface FormQuantity {
   [key: string]: number;
@@ -205,13 +206,16 @@ const handleCalculate = async () => {
   try {
     arrayResult =
       (await getCalculator(arrayNumber, arrayCalculate, sumValue.value)) || [];
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
   loading.value = false;
   oldResult.value = arrayResult;
   result.value =
     arrayResult?.length > 0 ? arrayResult.join(" ") : "Không tìm thấy";
+
+  ElNotification({
+    title: "Thông báo",
+    message: "Đã tìm xong",
+  });
 
   if (arrayResult.length > 0) {
     count.value += 1;
@@ -225,6 +229,7 @@ const handleCalculate = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 100px;
 
   .result {
     border: 1px solid rgb(78, 177, 78);

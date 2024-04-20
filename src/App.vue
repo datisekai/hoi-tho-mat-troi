@@ -2,8 +2,6 @@
 import { RouterView } from "vue-router";
 import Header from "./components/Header.vue";
 import { onMounted } from "vue";
-
-onMounted(() => {});
 </script>
 
 <template>

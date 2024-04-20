@@ -37,4 +37,12 @@ const handleSelect = (key: string) => {
 .flex-grow {
   flex-grow: 1;
 }
+
+.el-header {
+  overflow-x: auto;
+}
+
+.el-header::-webkit-scrollbar {
+  display: none;
+}
 </style>

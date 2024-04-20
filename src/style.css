@@ -11,4 +11,5 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   color: #1d1d1d;
+  touch-action: pan-x pan-y;
 }

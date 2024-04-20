@@ -1,0 +1,40 @@
+<template>
+  <el-header>
+    <el-menu
+      :default-active="activeIndex"
+      class="header"
+      mode="horizontal"
+      :ellipsis="false"
+      @select="handleSelect"
+    >
+      <el-menu-item index="">
+        <h1>Datisekai</h1>
+      </el-menu-item>
+      <div class="flex-grow" />
+      <el-menu-item v-for="menu in headerMenu" :index="menu.href">{{
+        menu.title
+      }}</el-menu-item>
+    </el-menu>
+  </el-header>
+</template>
+
+<script lang="ts" setup>
+import { headerMenu } from "../constants";
+import { useChangeView } from "../hooks/useChangeView";
+import { useRoute } from "vue-router";
+
+const { changeView } = useChangeView();
+const route = useRoute();
+
+const activeIndex = route.path;
+const handleSelect = (key: string) => {
+  console.log(key);
+  changeView(key);
+};
+</script>
+
+<style lang="scss">
+.flex-grow {
+  flex-grow: 1;
+}
+</style>

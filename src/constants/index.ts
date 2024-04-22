@@ -3,6 +3,7 @@ export const pathNames = {
   home: basePathName,
   commingSoon: basePathName + "comming-soon",
   inosuke: basePathName + "giai-cuu-inosuke",
+  sushi: basePathName + "day-sushi",
 };
 
 export const headerMenu = [
@@ -102,4 +103,37 @@ export const inosukes = [
   "/ino/ino-18.jpeg",
   "/ino/ino-19.jpeg",
   "/ino/ino-20.jpeg",
+];
+
+export const sushis = [
+  "https://www.youtube.com/embed/5P0uWOQV02w?si=2VR13IGIe4k8XOEq",
+  "https://www.youtube.com/embed/YhRlWiw2e1k?si=esylpfeEll0OiLql",
+  "https://www.youtube.com/embed/EahAWLGL9JE?si=_l6oveykHn1Ez1it",
+  "https://www.youtube.com/embed/iNmJi9R7X1s?si=br7p5blI-9TeVeEz",
+  "https://www.youtube.com/embed/Jh0UAzODdmM?si=RmLckFiKJwg_U28R",
+  "https://www.youtube.com/embed/FyU9a2zGUhY?si=PCnihtdmLayQIAWl",
+  "https://www.youtube.com/embed/BNj65AogvGQ?si=DmrbsW3WyN_NziLu",
+  "https://www.youtube.com/embed/tzsXjrQIxQ0?si=sS05JVNcmP-pFVGg",
+  "https://www.youtube.com/embed/4o4hL8J0e74?si=vlqu_kMDijEQK1qj",
+  "https://www.youtube.com/embed/S_qeCP4Gp3M?si=DZYN2kzf9gXHJ7UL",
+  "https://www.youtube.com/embed/e4LnsyHbiiE?si=FCkmFG82_rfx1rQw",
+  "https://www.youtube.com/embed/k-hHLdQDCqU?si=mSVUNwlhpfFA6dcl",
+  "https://www.youtube.com/embed/HvY1hoV2XBM?si=SA7rJEDIPOpRd8BD",
+  "https://www.youtube.com/embed/chiSB1cRZeE?si=tEKs9iFe_H5MmHOH",
+  "https://www.youtube.com/embed/ro3sUD7KlDs?si=YWXmvwWGrke0g-ij",
+  "https://www.youtube.com/embed/3DY6D6Owj7E?si=VPgmEHrvMExde9__",
+  "https://www.youtube.com/embed/Z2HILbOqToE?si=QX0FcDturgLt_sTL",
+  "https://www.youtube.com/embed/BuKuQHaOJk8?si=zniC0RD3Vof9D19W",
+  "https://www.youtube.com/embed/Lg3o0I8fY_Y?si=HdlahaHL19WAulpQ",
+  "https://www.youtube.com/embed/ajDdXJ4gqIg?si=n5hSnGrztfTWlcCj",
+  "https://www.youtube.com/embed/AwjBvP2tgh0?si=uMVrzveLc_h55uRl",
+  "https://www.youtube.com/embed/1kQzP8PRVjM?si=KBQEtYaiBNEfKwca",
+  "https://www.youtube.com/embed/1kQzP8PRVjM?si=G9jdWck681TjrAtI",
+  "https://www.youtube.com/embed/lpPR0sb3j0I?si=rIK-42JbCOMkZIiQ",
+  "https://www.youtube.com/embed/kPGCgvwydRo?si=lJ2dE2ZmZx-g25-r",
+  "https://www.youtube.com/embed/LFURHxPimF4?si=Iw3cK8fCtBXqMQvo",
+  "https://www.youtube.com/embed/GMd9c-mpdV0?si=dpPD8K_fSernNGra",
+  "https://www.youtube.com/embed/WLhkSFawS9I?si=nfllKe5zNQ1_MLko",
+  "https://www.youtube.com/embed/Z5tUSLwxgWA?si=UWPA7G5HvZsRDGkE",
+  "https://www.youtube.com/embed/-LMjXZUqclk?si=ThlbDKy_SccWXZEu",
 ];

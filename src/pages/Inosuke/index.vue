@@ -3,7 +3,7 @@
     <el-text class="title">Nguồn: FB Nguyễn Đức Huy</el-text>
     <div class="images">
       <div class="image" v-for="(img, i) in inosukes" :key="i">
-        <el-image :src="img" />
+        <el-image :lazy="true" :src="img" />
       </div>
     </div>
   </div>

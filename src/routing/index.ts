@@ -10,7 +10,7 @@ const importView = (name: string): Promise<string> =>
   import(`../pages/${name}/index.vue`);
 
 export const router: any = createRouter({
-  history: createWebHistory(),
+  history: createMemoryHistory(),
   routes: [
     {
       path: pathNames.home,

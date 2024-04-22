@@ -65,6 +65,7 @@
         <!-- <el-button type="primary">Primary</el-button> -->
       </div>
     </el-form>
+    <Guide />
   </div>
 </template>
 
@@ -73,6 +74,7 @@ import { reactive, ref } from "vue";
 import { formCalculate, formNumber } from "../../constants";
 import { getCalculator } from "../../utils";
 import { ElNotification } from "element-plus";
+import Guide from "../../components/Modal/Guide.vue";
 
 interface FormQuantity {
   [key: string]: number;
@@ -211,7 +213,9 @@ const handleCalculate = async () => {
   oldResult.value = arrayResult;
 
   const text =
-    arrayResult?.length > 0 ? arrayResult.join(" ") : "Không tìm thấy";
+    arrayResult?.length > 0
+      ? arrayResult.join(" ").replace("*", "x").replace("/", ":")
+      : "Không tìm thấy";
   result.value = text;
 
   ElNotification({

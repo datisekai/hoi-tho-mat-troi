@@ -2,8 +2,7 @@
   <el-dialog
     v-model="dialogVisible"
     title="Thông báo"
-    width="500"
-    :before-close="handleClose"
+    :width="devices.isMobile ? '90%' : '500'"
   >
     <div>
       <h3>Hướng dẫn sử dụng</h3>
@@ -43,14 +42,14 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { ElMessageBox } from "element-plus";
+import useDevice from "../../hooks/useDevice";
 
 const dialogVisible = ref(true);
 
-const handleClose = (done: () => void) => {};
+const { devices } = useDevice();
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .tnc {
   margin-top: 20px;
   .tnc-item {

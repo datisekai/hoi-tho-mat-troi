@@ -10,7 +10,8 @@
         <el-text class="result-text">{{
           loading
             ? "Đang tìm kết quả..."
-            : result || "Kết quả sẽ hiển thị tại đây"
+            : result.replaceAll("*", "x").replaceAll("/", ":") ||
+              "Kết quả sẽ hiển thị tại đây"
         }}</el-text>
       </div>
       <el-divider />
@@ -213,9 +214,7 @@ const handleCalculate = async () => {
   oldResult.value = arrayResult;
 
   const text =
-    arrayResult?.length > 0
-      ? arrayResult.join(" ").replace("*", "x").replace("/", ":")
-      : "Không tìm thấy";
+    arrayResult?.length > 0 ? arrayResult.join(" ") : "Không tìm thấy";
   result.value = text;
 
   ElNotification({

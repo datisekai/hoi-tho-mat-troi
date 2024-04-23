@@ -219,7 +219,7 @@ const handleCalculate = async () => {
 
   ElNotification({
     title: "Thông báo",
-    message: text,
+    message: text.replaceAll("*", "x").replaceAll("/", ":"),
   });
 
   if (arrayResult.length > 0) {

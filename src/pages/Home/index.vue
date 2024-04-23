@@ -6,12 +6,12 @@
         <el-input-number v-model="sumValue" :min="0" />
       </div>
       <el-divider />
+
       <div class="result">
         <el-text class="result-text">{{
           loading
             ? "Đang tìm kết quả..."
-            : result.replaceAll("*", "x").replaceAll("/", ":") ||
-              "Kết quả sẽ hiển thị tại đây"
+            : convertText(result) || "Kết quả sẽ hiển thị tại đây"
         }}</el-text>
       </div>
       <el-divider />
@@ -66,14 +66,14 @@
         <!-- <el-button type="primary">Primary</el-button> -->
       </div>
     </el-form>
-    <Guide />
+    <Guide v-if="showModal" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import { formCalculate, formNumber } from "../../constants";
-import { getCalculator } from "../../utils";
+import { getCalculator, convertText } from "../../utils";
 import { ElNotification } from "element-plus";
 import Guide from "../../components/Modal/Guide.vue";
 
@@ -106,6 +106,15 @@ const result = ref<string>("");
 const count = ref(0);
 const oldResult = ref<any>([]);
 const loading = ref(false);
+const showModal = ref(false);
+
+onMounted(() => {
+  const modal = sessionStorage.getItem("modal");
+  if (!modal) {
+    showModal.value = true;
+    sessionStorage.setItem("modal", "true");
+  }
+});
 
 const updateForm = () => {
   const newFormCalculate = { ...formQuantityCalculate };
@@ -219,7 +228,7 @@ const handleCalculate = async () => {
 
   ElNotification({
     title: "Thông báo",
-    message: text.replaceAll("*", "x").replaceAll("/", ":"),
+    message: convertText(text),
   });
 
   if (arrayResult.length > 0) {

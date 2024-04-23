@@ -21,7 +21,6 @@ export const getCalculator = (
 
   return new Promise((rs, rj) => {
     while (result !== value && index < 30000) {
-      console.log(`index:`, index);
       const arrRandomNum = random(arrNumber, 4);
       const arrRandomSyn = random(arrSyx, 3);
       const arrConcat = [];
@@ -39,4 +38,10 @@ export const getCalculator = (
     }
     rj([]);
   });
+};
+
+export const convertText = (text: string) => {
+  const replacedString = text.replace(/\*/g, "x").replace(/\//g, ":");
+
+  return replacedString;
 };

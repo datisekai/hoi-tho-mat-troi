@@ -1,8 +1,9 @@
 <template>
   <el-dialog
-    v-model="dialogVisible"
+    :model-value="showModal"
     title="Thông báo"
     :width="devices.isMobile ? '90%' : '500'"
+    @close="emit('close')"
   >
     <div>
       <h3>Hướng dẫn sử dụng</h3>
@@ -34,7 +35,7 @@
     </div>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="dialogVisible = false">Ẩn thông báo</el-button>
+        <el-button @click="emit('close')">Ẩn thông báo</el-button>
       </div>
     </template>
   </el-dialog>
@@ -44,7 +45,14 @@
 import { ref } from "vue";
 import useDevice from "../../hooks/useDevice";
 
-const dialogVisible = ref(true);
+const prop = defineProps({
+  showModal: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const emit = defineEmits(["close"]);
 
 const { devices } = useDevice();
 </script>

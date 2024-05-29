@@ -53,6 +53,8 @@
 
       <el-divider />
       <div class="action">
+        <el-button @click="showModal = true">Xem hướng dẫn</el-button>
+
         <el-button :loading="loading" @click="handleCalculate" type="primary"
           >Tìm kết quả</el-button
         >
@@ -66,7 +68,7 @@
         <!-- <el-button type="primary">Primary</el-button> -->
       </div>
     </el-form>
-    <Guide v-if="showModal" />
+    <Guide @close="showModal = false" :show-modal="showModal" />
   </div>
 </template>
 
@@ -109,11 +111,10 @@ const loading = ref(false);
 const showModal = ref(false);
 
 onMounted(() => {
-  const modal = sessionStorage.getItem("modal");
-  if (!modal) {
-    showModal.value = true;
-    sessionStorage.setItem("modal", "true");
-  }
+  // const modal = sessionStorage.getItem("modal");
+  // if (!modal) {
+  // sessionStorage.setItem("modal", "true");
+  // }
 });
 
 const updateForm = () => {

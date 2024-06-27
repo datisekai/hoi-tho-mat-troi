@@ -83,6 +83,8 @@ interface FormQuantity {
   [key: string]: number;
 }
 
+const countClick = ref(0);
+
 const formQuantityNumber = reactive<FormQuantity>({
   quantity0: 0,
   quantity1: 0,
@@ -193,11 +195,21 @@ const updateForm = () => {
 
 const handleNextCalculate = () => {
   if (oldResult.value) {
+    countClick.value += 1;
+    if (countClick.value % 2 != 0) {
+      window.open("https://s.shopee.vn/7pYOxERfa7", "_blank");
+    }
+
     updateForm();
     handleCalculate();
   }
 };
 const handleCalculate = async () => {
+  countClick.value += 1;
+  if (countClick.value % 2 != 0) {
+    window.open("https://s.shopee.vn/7pYOxERfa7", "_blank");
+  }
+
   let arrayNumber: number[] = [];
   let index = 0;
   for (const [key, value] of Object.entries(formQuantityNumber)) {

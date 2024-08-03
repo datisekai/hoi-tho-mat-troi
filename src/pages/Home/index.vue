@@ -193,11 +193,18 @@ const updateForm = () => {
   formQuantityNumber.quantity9 = newFormNumber.quantity9;
 };
 
+const linkShoppes = [
+  "https://s.shopee.vn/1LLtEcpasP",
+  "https://s.shopee.vn/7fFwn4THhQ",
+  "https://s.shopee.vn/7fFwn4THhQ",
+  "https://s.shopee.vn/5poIbin3iy",
+  "https://s.shopee.vn/8Up3mdGZcR",
+];
 const handleNextCalculate = () => {
   if (oldResult.value) {
     countClick.value += 1;
     if (countClick.value % 2 != 0) {
-      window.open("https://s.shopee.vn/7pYOxERfa7", "_blank");
+      window.open("https://s.shopee.vn/1LLtEcpasP", "_blank");
     }
 
     updateForm();
@@ -207,7 +214,9 @@ const handleNextCalculate = () => {
 const handleCalculate = async () => {
   countClick.value += 1;
   if (countClick.value % 2 != 0) {
-    window.open("https://s.shopee.vn/7pYOxERfa7", "_blank");
+    const randomLink = Math.floor(Math.random() * linkShoppes.length);
+    window.open(linkShoppes[randomLink], "_blank");
+    // window.open("https://s.shopee.vn/7pYOxERfa7", "_blank");
   }
 
   let arrayNumber: number[] = [];
